@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://pcw1993.github.io/image/Jietu20190401-180807@2x.jpg">
 <meta property="og:image" content="http://pcw1993.github.io/image/Jietu20190401-180833@2x.jpg">
 <meta property="og:image" content="http://pcw1993.github.io/image/Jietu20190401-181903@2x.jpg">
-<meta property="og:updated_time" content="2019-04-01T10:39:17.212Z">
+<meta property="og:updated_time" content="2019-04-01T10:41:12.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用github创建自己的博客">
 <meta name="twitter:description" content="一、创建github项目 创建仓库 访问：https://github.com 注册账号并登陆 登陆后创建新的仓库，如图：   我这里因为我已经创建了，会提示已经存在，你只需要在这里填上你自己的域名即可，必须以 github.io 结尾,前面写上自己的用户名。 tips：可以同时创建readme，用于介绍项目，也可以不创建。  相关设置 进入setting     ​    看到这里就能访问域名了">
@@ -97,7 +97,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/使用github创建自己的博客/" data-id="cjty81hf20000wjk3snjox4iy" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/使用github创建自己的博客/" data-id="cjty83y9m0001yak396mt6hvv" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -115,17 +115,17 @@
 <li><p>相关设置</p>
 <p>进入setting</p>
 <p><img src="/image/Jietu20190401-175029@2x.jpg" alt="setting"></p>
+<p><img src="/image/Jietu20190401-175057@2x.jpg" alt="发布"></p>
 </li>
 </ul>
-<p><img src="/image/Jietu20190401-175057@2x.jpg" alt="发布"></p>
 <p>​    看到这里就能访问域名了，但显示的是404，因为你还没有配置文件。这里介绍使用hexo创建博客。</p>
-<h3 id="二、配置ssh"><a href="#二、配置ssh" class="headerlink" title="二、配置ssh"></a>二、配置ssh</h3><h5 id="1、按照如下命令创建ssh密钥对"><a href="#1、按照如下命令创建ssh密钥对" class="headerlink" title="1、按照如下命令创建ssh密钥对"></a>1、按照如下命令创建ssh密钥对</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br><span class="line"><span class="meta">#</span>此时会显示一些文件</span><br><span class="line">mkdir key_backup</span><br><span class="line">cp id_rsa* key_backup</span><br><span class="line">rm id_rsa*  </span><br><span class="line"><span class="meta">#</span>以上三步为备份和移除原来的SSH key设置</span><br><span class="line">ssh-keygen -t rsa -C "邮件地址@youremail.com" #生成新的key文件,邮箱地址填你的Github地址</span><br><span class="line"><span class="meta">#</span>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span><br><span class="line"><span class="meta">#</span>接下来会让你输入密码</span><br></pre></td></tr></table></figure>
-<h5 id="2、添加SSH-Key到Github"><a href="#2、添加SSH-Key到Github" class="headerlink" title="2、添加SSH Key到Github"></a>2、添加SSH Key到Github</h5><p><img src="/image/Jietu20190401-180652@2x.jpg" alt="setting"></p>
-<p><img src="/image/Jietu20190401-180730@2x.jpg" alt="ssh"></p>
-<p><img src="/image/Jietu20190401-180807@2x.jpg" alt="newssh"></p>
-<p><img src="/image/Jietu20190401-180833@2x.jpg" alt="copy"></p>
+<h3 id="二、配置ssh"><a href="#二、配置ssh" class="headerlink" title="二、配置ssh"></a>二、配置ssh</h3><h5 id="1、按照如下命令创建ssh密钥对"><a href="#1、按照如下命令创建ssh密钥对" class="headerlink" title="1、按照如下命令创建ssh密钥对"></a>1、按照如下命令创建ssh密钥对</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br><span class="line"><span class="meta">#</span><span class="bash">此时会显示一些文件</span></span><br><span class="line">mkdir key_backup</span><br><span class="line">cp id_rsa* key_backup</span><br><span class="line">rm id_rsa*  </span><br><span class="line"><span class="meta">#</span><span class="bash">以上三步为备份和移除原来的SSH key设置</span></span><br><span class="line">ssh-keygen -t rsa -C "邮件地址@youremail.com" #生成新的key文件,邮箱地址填你的Github地址</span><br><span class="line"><span class="meta">#</span><span class="bash">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span></span><br><span class="line"><span class="meta">#</span><span class="bash">接下来会让你输入密码</span></span><br></pre></td></tr></table></figure>
+<h5 id="2、添加SSH-Key到Github"><a href="#2、添加SSH-Key到Github" class="headerlink" title="2、添加SSH Key到Github"></a>2、添加SSH Key到Github</h5><p>​    <img src="/image/Jietu20190401-180652@2x.jpg" alt="setting"></p>
+<p>​    <img src="/image/Jietu20190401-180730@2x.jpg" alt="ssh"></p>
+<p>​    <img src="/image/Jietu20190401-180807@2x.jpg" alt="newssh"></p>
+<p>​    <img src="/image/Jietu20190401-180833@2x.jpg" alt="copy"></p>
 <p>做到这一步就可以测试一下是否配置成功了:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="meta">#</span>之后会要你输入yes/no,输入yes就好了。</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="meta">#</span><span class="bash">之后会要你输入yes/no,输入yes就好了。</span></span><br></pre></td></tr></table></figure>
 <p>设置账号信息：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "你的名字"     #真实名字不是github用户名</span><br><span class="line">git config --global user.email "邮箱@邮箱.com"    #github邮箱</span><br></pre></td></tr></table></figure>
 <h3 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a>三、安装Hexo</h3><p>​    要使用Hexo,需要安装Nodejs以及Git</p>
