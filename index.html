@@ -73,6 +73,95 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-使用github创建自己的博客" class="post-使用github创建自己的博客 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2019/04/01/使用github创建自己的博客/">使用github创建自己的博客</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/使用github创建自己的博客/" data-id="cjty7khu50000n6k3spcndmmg" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="一、创建github项目"><a href="#一、创建github项目" class="headerlink" title="一、创建github项目"></a>一、创建github项目</h3><ul>
+<li><p>创建仓库</p>
+<p>访问：<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> 注册账号并登陆</p>
+<p>登陆后创建新的仓库，如图：</p>
+<p><img src="/image/Jietu20190401-173918@2x-4114526.jpg" alt="创建仓库"></p>
+<p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-174202@2x.jpg" alt="输入地址"></p>
+<p>我这里因为我已经创建了，会提示已经存在，你只需要在这里填上你自己的域名即可，必须以 <code>github.io</code> 结尾,前面写上自己的用户名。</p>
+<p>tips：可以同时创建readme，用于介绍项目，也可以不创建。</p>
+</li>
+<li><p>相关设置</p>
+<p>进入setting</p>
+<p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-175029@2x.jpg" alt="setting"></p>
+</li>
+</ul>
+<p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-175057@2x.jpg" alt="发布"></p>
+<p>​    看到这里就能访问域名了，但显示的是404，因为你还没有配置文件。这里介绍使用hexo创建博客。</p>
+<h3 id="二、配置ssh"><a href="#二、配置ssh" class="headerlink" title="二、配置ssh"></a>二、配置ssh</h3><h5 id="1、按照如下命令创建ssh密钥对"><a href="#1、按照如下命令创建ssh密钥对" class="headerlink" title="1、按照如下命令创建ssh密钥对"></a>1、按照如下命令创建ssh密钥对</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br><span class="line"><span class="meta">#</span>此时会显示一些文件</span><br><span class="line">mkdir key_backup</span><br><span class="line">cp id_rsa* key_backup</span><br><span class="line">rm id_rsa*  </span><br><span class="line"><span class="meta">#</span>以上三步为备份和移除原来的SSH key设置</span><br><span class="line">ssh-keygen -t rsa -C "邮件地址@youremail.com" #生成新的key文件,邮箱地址填你的Github地址</span><br><span class="line"><span class="meta">#</span>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span><br><span class="line"><span class="meta">#</span>接下来会让你输入密码</span><br></pre></td></tr></table></figure>
+<h5 id="2、添加SSH-Key到Github"><a href="#2、添加SSH-Key到Github" class="headerlink" title="2、添加SSH Key到Github"></a>2、添加SSH Key到Github</h5><p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-180652@2x.jpg" alt></p>
+<p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-180730@2x.jpg" alt></p>
+<p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-180807@2x.jpg" alt></p>
+<p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-180833@2x.jpg" alt></p>
+<p>做到这一步就可以测试一下是否配置成功了:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="meta">#</span>之后会要你输入yes/no,输入yes就好了。</span><br></pre></td></tr></table></figure>
+<p>设置账号信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "你的名字"     #真实名字不是github用户名</span><br><span class="line">git config --global user.email "邮箱@邮箱.com"    #github邮箱</span><br></pre></td></tr></table></figure>
+<h3 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a>三、安装Hexo</h3><p>​    要使用Hexo,需要安装Nodejs以及Git</p>
+<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>​    <a href="<https://nodejs.org/en/download/>" target="_blank">下载Node.js</a></p>
+<p>​    参考：<a href="<http://www.runoob.com/nodejs/nodejs-install-setup.html>" target="_blank">安装Node.js</a></p>
+<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>​    <a href="<https://git-scm.com/download/>" target="_blank">下载git</a></p>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g   </span><br><span class="line">hexo init #初始化网站   </span><br><span class="line">npm install   </span><br><span class="line">hexo g #生成或 hexo generate   </span><br><span class="line">hexo s #启动本地服务器 或者 hexo server,这一步之后就可以通过http://localhost:4000  查看了</span><br></pre></td></tr></table></figure>
+<p><em>详细命令参考</em><a href="<https://hexo.io/docs/commands.html>" target="_blank">Hexo文档</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new "文章名" #新建文章</span><br><span class="line">hexo new page "页面名" #新建页面</span><br></pre></td></tr></table></figure>
+<p>常用简写命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+<p>新建一篇文章后就可以预览了,在hexo new之后执行一次生成hexo g再执行hexo s启动本地服务器,如果之前还在hexo s 按Ctrl + C 结束.</p>
+<h3 id="四、添加主题"><a href="#四、添加主题" class="headerlink" title="四、添加主题"></a>四、添加主题</h3><h4 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h4><p>到<a href="<https://hexo.io/themes/>" target="_blank">官网</a>等渠道选择主题，下载或clone到本地，放入theme文件夹下</p>
+<h4 id="启动主题"><a href="#启动主题" class="headerlink" title="启动主题"></a>启动主题</h4><p>找到主目录_config.yml文件，打开并设置属性 theme: &lt;你的主题名字&gt;</p>
+<p><img src="/Users/pcw/PycharmProjects/pcw1993.github.io/docs/source/_posts/assets/Jietu20190401-181903@2x.jpg" alt></p>
+<p>使用命令生成页面并发布</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g  # 生成</span><br><span class="line">hexo s  # 本地访问</span><br></pre></td></tr></table></figure>
+<p>发布需要配置_config.yml文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: git@github.com:pcw1993/pcw1993.github.io.git  #这里的网址填你自己的</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<p>保存后需要提前安装一个扩展：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>发布：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d  # 发布</span><br></pre></td></tr></table></figure>
+<p>访问域名即可看到已生成的博客页面</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/01/使用github创建自己的博客/">
+    <time datetime="2019-04-01T09:29:12.000Z" class="entry-date">
+        2019-04-01
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-python使用happybase操作Hbase及Hbase在linux系统下的安装" class="post-python使用happybase操作Hbase及Hbase在linux系统下的安装 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -88,7 +177,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/" data-id="cjty4jy6800016gk32e1qikhy" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/" data-id="cjty7ivbb0002k4k37b32bd6n" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -167,7 +256,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/mysql8-0-12重置root密码方法/" data-id="cjty4jy6b00026gk3i77drq47" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/mysql8-0-12重置root密码方法/" data-id="cjty7ivb90001k4k3ag1kdf1l" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -220,7 +309,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/hello-world/" data-id="cjty4jy6400006gk38x83m0yk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/hello-world/" data-id="cjty7ivaq0000k4k32wdf6q2h" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -286,6 +375,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2019/04/01/使用github创建自己的博客/">使用github创建自己的博客</a>
+          </li>
         
           <li>
             <a href="/2019/04/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/">python使用happybase操作Hbase及Hbase在linux系统下的安装</a>
