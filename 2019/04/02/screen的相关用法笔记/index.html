@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="Python渣渣程序员一枚">
+  
+
+  
+  <meta name="keywords" content="Python,开发者,程序员,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek">
+  
+  
+  
+  
+  
+  
+  <title>screen的相关用法笔记 | 楚伟的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="http://man.linuxde.net/screen screenscreen就是开启一个新的终端，利用这个工具可以确保任务不会因为退出某个终端而终止。 123456789screen  # 输入命令screen会打开一个终端，ctrl+a然后ctrl+d会退出该终端。[detached from 17799.pts-1.cent01] screen[detached from 17834.">
+<meta name="keywords" content="shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="screen的相关用法笔记">
+<meta property="og:url" content="http://pcw1993.github.io/2019/04/02/screen的相关用法笔记/index.html">
+<meta property="og:site_name" content="楚伟的博客">
+<meta property="og:description" content="http://man.linuxde.net/screen screenscreen就是开启一个新的终端，利用这个工具可以确保任务不会因为退出某个终端而终止。 123456789screen  # 输入命令screen会打开一个终端，ctrl+a然后ctrl+d会退出该终端。[detached from 17799.pts-1.cent01] screen[detached from 17834.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://pcw1993.github.io/image/4CD78D32-3E3C-492E-9D92-2B188E4D4054.jpg">
+<meta property="og:updated_time" content="2019-04-02T01:47:28.692Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="screen的相关用法笔记">
+<meta name="twitter:description" content="http://man.linuxde.net/screen screenscreen就是开启一个新的终端，利用这个工具可以确保任务不会因为退出某个终端而终止。 123456789screen  # 输入命令screen会打开一个终端，ctrl+a然后ctrl+d会退出该终端。[detached from 17799.pts-1.cent01] screen[detached from 17834.">
+<meta name="twitter:image" content="http://pcw1993.github.io/image/4CD78D32-3E3C-492E-9D92-2B188E4D4054.jpg">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="楚伟的博客" rel="home">楚伟的博客</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">花儿谢，鸟🐦归巢</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">文章</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-screen的相关用法笔记" class="post-screen的相关用法笔记 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      screen的相关用法笔记
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/screen的相关用法笔记/" data-id="cjtz4hf4b000090e9bgfajb51" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><a href="http://man.linuxde.net/screen" target="_blank" rel="noopener">http://man.linuxde.net/screen</a></p>
+<h4 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h4><p>screen就是开启一个新的终端，利用这个工具可以确保任务不会因为退出某个终端而终止。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">screen  # 输入命令screen会打开一个终端，ctrl+a然后ctrl+d会退出该终端。</span><br><span class="line"></span><br><span class="line">[detached from 17799.pts-1.cent01] </span><br><span class="line"></span><br><span class="line">screen</span><br><span class="line"></span><br><span class="line">[detached from 17834.pts-1.cent01] </span><br><span class="line"></span><br><span class="line">screen -ls # 列出有哪些screen终端以及他们的编号</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">There are screens on: </span><br><span class="line"></span><br><span class="line">    17834.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">    17799.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">    14030.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">    13942.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">4 Sockets in /var/run/screen/S-root.</span><br></pre></td></tr></table></figure>
+<h4 id="进入某个screen"><a href="#进入某个screen" class="headerlink" title="进入某个screen"></a>进入某个screen</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r 13942 //进入screen 13942</span><br></pre></td></tr></table></figure>
+<h4 id="创建新的screen"><a href="#创建新的screen" class="headerlink" title="创建新的screen"></a>创建新的screen</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">screen -S "abc" # 使用-S为一个screen终端命名，避免弄不清哪个终端是什么作用。</span><br><span class="line">[detached from 17928.abc]</span><br></pre></td></tr></table></figure>
+<h4 id="列举所有screen"><a href="#列举所有screen" class="headerlink" title="列举所有screen"></a>列举所有screen</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -ls</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">There are screens on: </span><br><span class="line"></span><br><span class="line">    17928.abc   (Detached) </span><br><span class="line"></span><br><span class="line">    17834.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">    17799.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">    14030.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">    13942.pts-1.cent01  (Detached) </span><br><span class="line"></span><br><span class="line">5 Sockets in /var/run/screen/S-root.</span><br></pre></td></tr></table></figure>
+<h4 id="关闭某个screen"><a href="#关闭某个screen" class="headerlink" title="关闭某个screen"></a>关闭某个screen</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -X -S 21778 quit</span><br></pre></td></tr></table></figure>
+<h4 id="退出某个screen"><a href="#退出某个screen" class="headerlink" title="退出某个screen"></a>退出某个screen</h4><p>ctrl+a然后ctrl+d会退出该终端。</p>
+<h4 id="清除dead-会话"><a href="#清除dead-会话" class="headerlink" title="清除dead 会话"></a>清除dead 会话</h4><p>如果由于某种原因其中一个会话死掉了（例如人为杀掉该会话），这时screen -list会显示该会话为dead状态。使用screen -wipe命令清除该会话：</p>
+<p><img src="/image/4CD78D32-3E3C-492E-9D92-2B188E4D4054.jpg" alt></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/02/screen的相关用法笔记/">
+    <time datetime="2019-04-02T01:38:11.000Z" class="entry-date">
+        2019-04-02
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/04/01/使用github创建自己的博客/" rel="next">使用github创建自己的博客 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="/media/花僮-谜底.mp3" controls="controls" style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/02/screen的相关用法笔记/">screen的相关用法笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/使用github创建自己的博客/">使用github创建自己的博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/">python使用happybase操作Hbase及Hbase在linux系统下的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/mysql8-0-12重置root密码方法/">mysql8.0.12重置root密码方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 Peng Chuwei
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
