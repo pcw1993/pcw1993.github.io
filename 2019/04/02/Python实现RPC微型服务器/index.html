@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="Python渣渣程序员一枚">
+  
+
+  
+  <meta name="keywords" content="Python,开发者,程序员,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek">
+  
+  
+  
+  
+  
+  
+  <title>Python实现RPC微型服务器 | 楚伟的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RPC先说说什么是RPC，RPC（Remote Procedure Call）——远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。 RPC采用客户机/服务器模式。请求程">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python实现RPC微型服务器">
+<meta property="og:url" content="http://pcw1993.github.io/2019/04/02/Python实现RPC微型服务器/index.html">
+<meta property="og:site_name" content="楚伟的博客">
+<meta property="og:description" content="RPC先说说什么是RPC，RPC（Remote Procedure Call）——远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。 RPC采用客户机/服务器模式。请求程">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-02T06:06:36.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python实现RPC微型服务器">
+<meta name="twitter:description" content="RPC先说说什么是RPC，RPC（Remote Procedure Call）——远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。 RPC采用客户机/服务器模式。请求程">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="楚伟的博客" rel="home">楚伟的博客</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">花儿谢，鸟🐦归巢</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">文章</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Python实现RPC微型服务器" class="post-Python实现RPC微型服务器 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      Python实现RPC微型服务器
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Python实现RPC微型服务器/" data-id="cjtzdquqk0001mjk39l2nuu60" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h2><p>先说说什么是RPC，RPC（Remote Procedure Call）——远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
+<p>RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。</p>
+<p>说白了，就是一种远程调用函数接口的方式，客户端和服务端之间约定一种契约（函数接口），然后服务端一直等待客户端的调用。有点像平常的WEB网络请求，不过这种方式非常轻量，不涉及HTTP这些东西，待会可以看到实现很简单。</p>
+<p>上面说了，一种用途是在多台服务器之间互相进行调用，另一个用途则在于，不同编程语言之间都支持这种方式，像Python更是内置对其的支持，不需要额外安装什么库，所以可以直接在多语言的服务器之间互相进行调用，很简单。</p>
+<h2 id="xmlrpc库"><a href="#xmlrpc库" class="headerlink" title="xmlrpc库"></a>xmlrpc库</h2><p>在Python2（网上大部分是Python2使用RPC的资料）中，服务端需要用到SimpleXMLRPCServer库，客户端需要用到ServerProxy库，而在Python3中，两者被整合到了同一个<a href="https://link.jianshu.com/?t=https%3A%2F%2Fdocs.python.org%2F3%2Flibrary%2Fxmlrpc.html" target="_blank" rel="noopener">xmlrpc库</a>中，分为xmlrpc.server和xmlrpc.client两部分。所以如果在Python3下使用，就需要导入这个库了。</p>
+<h3 id="简单版"><a href="#简单版" class="headerlink" title="简单版"></a>简单版</h3><ul>
+<li>服务器端</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xmlrpc.server <span class="keyword">import</span> SimpleXMLRPCServer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">respon_string</span><span class="params">(str)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"get string:%s"</span> % str</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    server = SimpleXMLRPCServer((<span class="string">'localhost'</span>, <span class="number">8888</span>))  <span class="comment"># 初始化</span></span><br><span class="line">    server.register_function(respon_string, <span class="string">"get_string"</span>)  <span class="comment"># 注册函数</span></span><br><span class="line">    print(<span class="string">"Listening for Client"</span>)</span><br><span class="line">    server.serve_forever()  <span class="comment"># 保持等待调用状态</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>客户端</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xmlrpc.client <span class="keyword">import</span> ServerProxy</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    server = ServerProxy(<span class="string">"http://localhost:8888"</span>)  <span class="comment"># 初始化服务器</span></span><br><span class="line">    print(server.get_string(<span class="string">"cloud"</span>))  <span class="comment"># 调用函数并传参</span></span><br></pre></td></tr></table></figure>
+<h3 id="多线程版"><a href="#多线程版" class="headerlink" title="多线程版"></a>多线程版</h3><ul>
+<li>服务器端</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xmlrpc.server <span class="keyword">import</span> SimpleXMLRPCServer</span><br><span class="line"><span class="keyword">from</span> socketserver <span class="keyword">import</span> ThreadingMixIn</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadXMLRPCServer</span><span class="params">(ThreadingMixIn, SimpleXMLRPCServer)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">respon_string</span><span class="params">(str)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"get string:%s"</span> % str</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    server = ThreadXMLRPCServer((<span class="string">'localhost'</span>, <span class="number">8888</span>))  <span class="comment"># 初始化</span></span><br><span class="line">    server.register_function(respon_string, <span class="string">"get_string"</span>)  <span class="comment"># 注册函数1</span></span><br><span class="line">    server.register_function(add, <span class="string">'add'</span>)  <span class="comment"># 注册函数2</span></span><br><span class="line">    print(<span class="string">"Listening for Client"</span>)</span><br><span class="line">    server.serve_forever()  <span class="comment"># 保持等待调用状态</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>客户端</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xmlrpc.client <span class="keyword">import</span> ServerProxy</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    server = ServerProxy(<span class="string">"http://localhost:8888"</span>)  <span class="comment"># 初始化服务器</span></span><br><span class="line">    print(server.get_string(<span class="string">"cloud"</span>))  <span class="comment"># 调用函数1并传参</span></span><br><span class="line">    print(server.add(<span class="number">8</span>, <span class="number">8</span>))  <span class="comment"># 调用函数2并传参</span></span><br></pre></td></tr></table></figure>
+<h3 id="文件上传下载"><a href="#文件上传下载" class="headerlink" title="文件上传下载"></a>文件上传下载</h3><ul>
+<li>服务器端</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xmlrpc.server <span class="keyword">import</span> SimpleXMLRPCServer</span><br><span class="line"><span class="keyword">from</span> socketserver <span class="keyword">import</span> ThreadingMixIn</span><br><span class="line"><span class="keyword">import</span> xmlrpc.client</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadXMLRPCServer</span><span class="params">(ThreadingMixIn, SimpleXMLRPCServer)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 供客户端下载文件</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">image_get</span><span class="params">()</span>:</span></span><br><span class="line">    handle = open(<span class="string">"boy.jpg"</span>, <span class="string">'rb'</span>)</span><br><span class="line">    <span class="keyword">return</span> xmlrpc.client.Binary(handle.read())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 供客户端上传文件</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">image_put</span><span class="params">(data)</span>:</span></span><br><span class="line">    handle = open(<span class="string">"get_girl.jpg"</span>, <span class="string">'wb'</span>)</span><br><span class="line">    handle.write(data.data)</span><br><span class="line">    handle.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    server = ThreadXMLRPCServer((<span class="string">'localhost'</span>, <span class="number">8888</span>), allow_none=<span class="literal">True</span>)  <span class="comment"># 初始化</span></span><br><span class="line">    server.register_function(image_put, <span class="string">'image_put'</span>)</span><br><span class="line">    server.register_function(image_get, <span class="string">'image_get'</span>)</span><br><span class="line">    print(<span class="string">"Listening for Client"</span>)</span><br><span class="line">    server.serve_forever()  <span class="comment"># 保持等待调用状态</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>客户端</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xmlrpc.client <span class="keyword">import</span> ServerProxy</span><br><span class="line"><span class="keyword">import</span> xmlrpc.client</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    server = ServerProxy(<span class="string">"http://localhost:8888"</span>, allow_none=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 上传文件</span></span><br><span class="line">    put_handle = open(<span class="string">"girl.jpg"</span>, <span class="string">'rb'</span>)</span><br><span class="line">    server.image_put(xmlrpc.client.Binary(put_handle.read()))</span><br><span class="line">    put_handle.close()</span><br><span class="line">    <span class="comment"># 下载文件</span></span><br><span class="line">    get_handle = open(<span class="string">"get_boy.jpg"</span>, <span class="string">'wb'</span>)</span><br><span class="line">    get_handle.write(server.image_get().data)</span><br><span class="line">    get_handle.close()</span><br></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/02/Python实现RPC微型服务器/">
+    <time datetime="2019-04-02T05:59:49.000Z" class="entry-date">
+        2019-04-02
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/04/02/Markdown语法/" rel="next">Markdown语法 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/02/Python实现RPC微型服务器/">Python实现RPC微型服务器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/Markdown语法/">Markdown语法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/screen的相关用法笔记/">screen的相关用法笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/使用github创建自己的博客/">使用github创建自己的博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/mysql8-0-12重置root密码方法/">mysql8.0.12重置root密码方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 Peng Chuwei
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
