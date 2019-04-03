@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="Python渣渣程序员一枚">
+  
+
+  
+  <meta name="keywords" content="Python,开发者,程序员,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek">
+  
+  
+  
+  
+  
+  
+  <title>python使用schedule定时任务 | 楚伟的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="python中的轻量级定时任务调度库：schedule定时任务可以使用celery或crontab等，Python中有一个轻量级的定时任务调度的库：schedule。 安装pip install schedule 简单例子12345678910111213141516import scheduleimport time def job():    print(&quot;I&apos;m working...&quot;) s">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python使用schedule定时任务">
+<meta property="og:url" content="http://pcw1993.github.io/2019/04/03/python使用schedule定时任务/index.html">
+<meta property="og:site_name" content="楚伟的博客">
+<meta property="og:description" content="python中的轻量级定时任务调度库：schedule定时任务可以使用celery或crontab等，Python中有一个轻量级的定时任务调度的库：schedule。 安装pip install schedule 简单例子12345678910111213141516import scheduleimport time def job():    print(&quot;I&apos;m working...&quot;) s">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-03T02:46:15.818Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python使用schedule定时任务">
+<meta name="twitter:description" content="python中的轻量级定时任务调度库：schedule定时任务可以使用celery或crontab等，Python中有一个轻量级的定时任务调度的库：schedule。 安装pip install schedule 简单例子12345678910111213141516import scheduleimport time def job():    print(&quot;I&apos;m working...&quot;) s">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="楚伟的博客" rel="home">楚伟的博客</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">花儿谢，鸟🐦归巢</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">文章</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-python使用schedule定时任务" class="post-python使用schedule定时任务 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      python使用schedule定时任务
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/python使用schedule定时任务/" data-id="cju0m1pcu0001fyk3vptqmqff" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="python中的轻量级定时任务调度库：schedule"><a href="#python中的轻量级定时任务调度库：schedule" class="headerlink" title="python中的轻量级定时任务调度库：schedule"></a>python中的轻量级定时任务调度库：schedule</h3><p>定时任务可以使用celery或crontab等，Python中有一个轻量级的定时任务调度的库：schedule。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>pip install schedule</p>
+<h4 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> schedule</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I'm working..."</span>)</span><br><span class="line"> </span><br><span class="line">schedule.every(<span class="number">10</span>).minutes.do(job)</span><br><span class="line">schedule.every().hour.do(job)</span><br><span class="line">schedule.every().day.at(<span class="string">"10:30"</span>).do(job)</span><br><span class="line">schedule.every(<span class="number">5</span>).to(<span class="number">10</span>).days.do(job)</span><br><span class="line">schedule.every().monday.do(job)</span><br><span class="line">schedule.every().wednesday.at(<span class="string">"13:15"</span>).do(job)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    schedule.run_pending()</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="多任务运行"><a href="#多任务运行" class="headerlink" title="多任务运行"></a>多任务运行</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> schedule</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I'm working for job1"</span>)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">"job1:"</span>, datetime.datetime.now())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I'm working for job2"</span>)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">"job2:"</span>, datetime.datetime.now())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></span><br><span class="line">    schedule.every(<span class="number">10</span>).seconds.do(job1)</span><br><span class="line">    schedule.every(<span class="number">10</span>).seconds.do(job2)</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        schedule.run_pending()</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>由于上面这种方法会导致job2运行延迟，所以这时候需要使用多线程运行。</p>
+<h4 id="多线程运行"><a href="#多线程运行" class="headerlink" title="多线程运行"></a>多线程运行</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> schedule</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I'm working for job1"</span>)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">"job1:"</span>, datetime.datetime.now())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I'm working for job2"</span>)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">"job2:"</span>, datetime.datetime.now())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job1_task</span><span class="params">()</span>:</span></span><br><span class="line">    threading.Thread(target=job1).start()</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job2_task</span><span class="params">()</span>:</span></span><br><span class="line">    threading.Thread(target=job2).start()</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></span><br><span class="line">    schedule.every(<span class="number">10</span>).seconds.do(job1_task)</span><br><span class="line">    schedule.every(<span class="number">10</span>).seconds.do(job2_task)</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        schedule.run_pending()</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/03/python使用schedule定时任务/">
+    <time datetime="2019-04-03T02:41:04.000Z" class="entry-date">
+        2019-04-03
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/04/02/Python实现RPC微型服务器/" rel="next">Python实现RPC微型服务器 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/03/python使用schedule定时任务/">python使用schedule定时任务</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/Python实现RPC微型服务器/">Python实现RPC微型服务器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/Markdown语法/">Markdown语法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/screen的相关用法笔记/">screen的相关用法笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/使用github创建自己的博客/">使用github创建自己的博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 Peng Chuwei
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
