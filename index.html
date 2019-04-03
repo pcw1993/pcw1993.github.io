@@ -88,7 +88,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac终端切换用户/" data-id="cju112ddt00058rk3w9n081gf" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac终端切换用户/" data-id="cju114yj10003aek3z7xp3nag" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -136,7 +136,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac设置环境变量PATH/" data-id="cju112ddv00088rk3wbg40smk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac设置环境变量PATH/" data-id="cju114yj30005aek3kfaqbqqk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -161,30 +161,18 @@
 <li>./bash_profile 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该文件被读取.（每个用户都有一个.bashrc文件，在用户目录下）<br> <strong>使用注意</strong> 需要需要重启才会生效，/etc/profile对所有用户生效，~/.bash_profile只对当前用户生效。</li>
 </ul>
 <p>source ./.bash_profile 或者 ./.profile 环境信息生效</p>
-<h2 id="操作篇"><a href="#操作篇" class="headerlink" title="操作篇"></a>操作篇</h2><h3 id="全局设置"><a href="#全局设置" class="headerlink" title="全局设置"></a>全局设置</h3><ol>
-<li>创建一个文件：</li>
-</ol>
+<h2 id="操作篇"><a href="#操作篇" class="headerlink" title="操作篇"></a>操作篇</h2><h3 id="全局设置"><a href="#全局设置" class="headerlink" title="全局设置"></a>全局设置</h3><p>创建一个文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo touch /etc/paths.d/mysql</span><br></pre></td></tr></table></figure>
-<ol>
-<li>用 vim 打开这个文件（如果是以 open -t 的方式打开，则不允许编辑）：</li>
-</ol>
+<p>用 vim 打开这个文件（如果是以 open -t 的方式打开，则不允许编辑）：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/paths.d/mysql</span><br></pre></td></tr></table></figure>
-<ol>
-<li>编辑该文件，键入路径并保存（关闭该 Terminal 窗口并重新打开一个，就能使用 mysql 命令了）</li>
-</ol>
+<p>编辑该文件，键入路径并保存（关闭该 Terminal 窗口并重新打开一个，就能使用 mysql 命令了）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/mysql/bin</span><br></pre></td></tr></table></figure>
-<ol>
-<li>$ source 相应的文件 生效配置环境</li>
-</ol>
-<h3 id="单个用户设置"><a href="#单个用户设置" class="headerlink" title="单个用户设置"></a>单个用户设置</h3><ol>
-<li>cd ~</li>
-<li>vim ~/.bash_profile （任意一个文件中添加用户级环境变量）</li>
-</ol>
+<p>$ source 相应的文件 生效配置环境</p>
+<h3 id="单个用户设置"><a href="#单个用户设置" class="headerlink" title="单个用户设置"></a>单个用户设置</h3><p>cd ~</p>
+<p>vim ~/.bash_profile （任意一个文件中添加用户级环境变量）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/opt/local/bin:/opt/local/sbin:$PATH</span><br></pre></td></tr></table></figure>
 <p>把上述代码添加到~/.bash_profile上。</p>
-<ol>
-<li>source 相应的文件 生效配置环境</li>
-</ol>
+<p>source 相应的文件 生效配置环境</p>
 <h3 id="查看PATH"><a href="#查看PATH" class="headerlink" title="查看PATH"></a>查看PATH</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
       
     </div><!-- .entry-content -->
@@ -224,7 +212,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/python使用schedule定时任务/" data-id="cju112ddy000b8rk391f57jhl" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/python使用schedule定时任务/" data-id="cju114yj7000baek3t7h96q57" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -275,7 +263,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Python实现RPC微型服务器/" data-id="cju112ddo00018rk3xkn8r344" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Python实现RPC微型服务器/" data-id="cju114yiy0001aek36dzsvjxs" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -349,7 +337,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Markdown语法/" data-id="cju112ddj00008rk3by6osz2v" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Markdown语法/" data-id="cju114yit0000aek35avy5cc6" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -451,7 +439,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/screen的相关用法笔记/" data-id="cju112ddz000d8rk3d63j3rh9" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/screen的相关用法笔记/" data-id="cju114yj8000daek398g2a86v" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -508,7 +496,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/使用github创建自己的博客/" data-id="cju112de1000g8rk3vzhcp2pv" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/使用github创建自己的博客/" data-id="cju114yjb000gaek3ze0o6dyk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -597,7 +585,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/mysql8-0-12重置root密码方法/" data-id="cju112ddw00098rk3seiwl5ly" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/mysql8-0-12重置root密码方法/" data-id="cju114yj50008aek358zi4iak" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -650,7 +638,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/02/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/" data-id="cju112dds00048rk36mb3gkga" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/02/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/" data-id="cju114yj60009aek3d3jko2yu" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -729,7 +717,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/01/02/hello-world/" data-id="cju112ddr00038rk3b4uxx22x" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/01/02/hello-world/" data-id="cju114yj20004aek36rz9s60e" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
