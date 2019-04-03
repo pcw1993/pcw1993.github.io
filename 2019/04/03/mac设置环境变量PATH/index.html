@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="Python渣渣程序员一枚">
+  
+
+  
+  <meta name="keywords" content="Python,开发者,程序员,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek">
+  
+  
+  
+  
+  
+  
+  <title>mac设置环境变量PATH | 楚伟的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="理论篇Mac系统的环境变量，加载顺序为： /etc/profile  /etc/paths  ~/.bash_profile  ~/.bash_login  ~/.profile  ~/.bashrc /etc/profile和/etc/paths是系统级别的，系统启动就会加载，后面几个是当前用户级的环境变量。后面3个按照从前往后的顺序读取，如果/.bash_profile文件存在，则后面的几个文">
+<meta name="keywords" content="Mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac设置环境变量PATH">
+<meta property="og:url" content="http://pcw1993.github.io/2019/04/03/mac设置环境变量PATH/index.html">
+<meta property="og:site_name" content="楚伟的博客">
+<meta property="og:description" content="理论篇Mac系统的环境变量，加载顺序为： /etc/profile  /etc/paths  ~/.bash_profile  ~/.bash_login  ~/.profile  ~/.bashrc /etc/profile和/etc/paths是系统级别的，系统启动就会加载，后面几个是当前用户级的环境变量。后面3个按照从前往后的顺序读取，如果/.bash_profile文件存在，则后面的几个文">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-03T09:45:43.848Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mac设置环境变量PATH">
+<meta name="twitter:description" content="理论篇Mac系统的环境变量，加载顺序为： /etc/profile  /etc/paths  ~/.bash_profile  ~/.bash_login  ~/.profile  ~/.bashrc /etc/profile和/etc/paths是系统级别的，系统启动就会加载，后面几个是当前用户级的环境变量。后面3个按照从前往后的顺序读取，如果/.bash_profile文件存在，则后面的几个文">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="楚伟的博客" rel="home">楚伟的博客</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">花儿谢，鸟🐦归巢</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">文章</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-mac设置环境变量PATH" class="post-mac设置环境变量PATH post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      mac设置环境变量PATH
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac设置环境变量PATH/" data-id="cju110c47000369k3iu73u5as" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="理论篇"><a href="#理论篇" class="headerlink" title="理论篇"></a>理论篇</h2><p>Mac系统的环境变量，加载顺序为：</p>
+<p>/etc/profile </p>
+<p>/etc/paths </p>
+<p>~/.bash_profile </p>
+<p>~/.bash_login </p>
+<p>~/.profile </p>
+<p>~/.bashrc</p>
+<p>/etc/profile和/etc/paths是系统级别的，系统启动就会加载，后面几个是当前用户级的环境变量。后面3个按照从前往后的顺序读取，如果/.bash_profile文件存在，则后面的几个文件就会被忽略不读了，如果/.bash_profile文件不存在，才会以此类推读取后面的文件。~/.bashrc没有上述规则，它是bash shell打开的时候载入的。</p>
+<p>PATH的语法为如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#中间用冒号隔开</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:&lt;PATH 1&gt;:&lt;PATH 2&gt;:&lt;PATH 3&gt;:------:&lt;PATH N&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="上述文件的科普"><a href="#上述文件的科普" class="headerlink" title="上述文件的科普"></a>上述文件的科普</h3><ul>
+<li>/etc/paths （全局建议修改这个文件 ）<br> 编辑 paths，将环境变量添加到 paths文件中 ，一行一个路径<br> Hint：输入环境变量时，不用一个一个地输入，只要拖动文件夹到 Terminal 里就可以了。</li>
+<li>/etc/profile （建议不修改这个文件 ）<br> 全局（公有）配置，不管是哪个用户，登录时都会读取该文件。</li>
+<li>/etc/bashrc （一般在这个文件中添加系统级环境变量）<br> 全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件</li>
+<li>.profile 文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置<br> <strong>使用注意</strong>：如果你有对/etc/profile有修改的话必须得重启你的修改才会生效，此修改对每个用户都生效。</li>
+<li>./bashrc 每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.<br> <strong>使用注意</strong> 对所有的使用bash的用户修改某个配置并在以后打开的bash都生效的话可以修改这个文件，修改这个文件不用重启，重新打开一个bash即可生效。</li>
+<li>./bash_profile 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该文件被读取.（每个用户都有一个.bashrc文件，在用户目录下）<br> <strong>使用注意</strong> 需要需要重启才会生效，/etc/profile对所有用户生效，~/.bash_profile只对当前用户生效。</li>
+</ul>
+<p>source ./.bash_profile 或者 ./.profile 环境信息生效</p>
+<h2 id="操作篇"><a href="#操作篇" class="headerlink" title="操作篇"></a>操作篇</h2><h3 id="全局设置"><a href="#全局设置" class="headerlink" title="全局设置"></a>全局设置</h3><ol>
+<li>创建一个文件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo touch /etc/paths.d/mysql</span><br></pre></td></tr></table></figure>
+<ol>
+<li>用 vim 打开这个文件（如果是以 open -t 的方式打开，则不允许编辑）：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/paths.d/mysql</span><br></pre></td></tr></table></figure>
+<ol>
+<li>编辑该文件，键入路径并保存（关闭该 Terminal 窗口并重新打开一个，就能使用 mysql 命令了）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/mysql/bin</span><br></pre></td></tr></table></figure>
+<ol>
+<li>$ source 相应的文件 生效配置环境</li>
+</ol>
+<h3 id="单个用户设置"><a href="#单个用户设置" class="headerlink" title="单个用户设置"></a>单个用户设置</h3><ol>
+<li>cd ~</li>
+<li>vim ~/.bash_profile （任意一个文件中添加用户级环境变量）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/opt/local/bin:/opt/local/sbin:$PATH</span><br></pre></td></tr></table></figure>
+<p>把上述代码添加到~/.bash_profile上。</p>
+<ol>
+<li>source 相应的文件 生效配置环境</li>
+</ol>
+<h3 id="查看PATH"><a href="#查看PATH" class="headerlink" title="查看PATH"></a>查看PATH</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/03/mac设置环境变量PATH/">
+    <time datetime="2019-04-03T09:43:05.000Z" class="entry-date">
+        2019-04-03
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/04/03/python使用schedule定时任务/" rel="next">python使用schedule定时任务 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/03/mac设置环境变量PATH/">mac设置环境变量PATH</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/03/python使用schedule定时任务/">python使用schedule定时任务</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/Python实现RPC微型服务器/">Python实现RPC微型服务器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/Markdown语法/">Markdown语法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/02/screen的相关用法笔记/">screen的相关用法笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 Peng Chuwei
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
