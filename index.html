@@ -73,6 +73,56 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function" class="post-SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2019/04/26/SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function/">SyntaxError: unqualified exec is not allowed in function &#39;xxx&#39; it is a nested function</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/26/SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function/" data-id="cjuxfw16u0002pak3d0afyee9" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><p>如同标题，我遇到了这样的错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: unqualified exec is not allowed in function &apos;call_plugin_func&apos; it is a nested function</span><br></pre></td></tr></table></figure>
+<p>很纳闷的是我同样在别的机器上远行代码没有遇到这样的问题，完全相同的代码为什么会出现语法错误？</p>
+<p>查阅资料后得知，这应该是Python版本兼容性的问题，低于2.7.9版本的Python会遇到这样的问题。具体原理就不多赘述了，升级过版本如果能解决你遇到的问题，我会很开心！</p>
+<p><a href="https://www.cnblogs.com/toulanboy/articles/7753502.html" target="_blank">升级版本2.7.9</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/04/26/SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function/">
+    <time datetime="2019-04-26T02:06:36.000Z" class="entry-date">
+        2019-04-26
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory" class="post-ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory post type-post status-publish format-standard hentry">
     <!---->
 
@@ -88,18 +138,19 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/26/ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory/" data-id="cjuxfj2p90000lpk3tmrve5cz" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/26/ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory/" data-id="cjuxfw16m0000pak3rizuxrq0" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><h5 id="ImportError-libsybdb-so-5"><a href="#ImportError-libsybdb-so-5" class="headerlink" title="ImportError: libsybdb.so.5"></a>ImportError: libsybdb.so.5</h5><p>今天安装pymssql，众所周知，这个库依赖FreeTDS，所以我通过下载源码的方式安装了它，但问题也出现了，运行后报了以下错误</p>
+        <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><h5 id="ImportError-libsybdb-so-5"><a href="#ImportError-libsybdb-so-5" class="headerlink" title="ImportError: libsybdb.so.5"></a>ImportError: libsybdb.so.5</h5><p>今天安装pymssql，众所周知，这个库依赖FreeTDS，所以我通过下载源码的方式安装了它，但问题也出现了，运行后报了以下错误</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ImportError: libsybdb.so.5: cannot open shared object file: No such file or</span><br><span class="line">  directory</span><br></pre></td></tr></table></figure>
 <p>这让我很苦恼，本来对linux系统就不是特别熟悉，多方查阅资料，搜索技术博客。很多人写的都不能解决我的问题。直到后来，这里不得不说说搜索引擎的影响了。同样的搜索条件，百度给的大多是百度知道，新浪博客和一些不知道什么奇奇怪怪的一大堆广告的类似于CSDN这种博客或者学习网站的结果，这很影响心情！！！还是用了谷歌，令人欣慰，结果大都来自知名的github，或者Stack Overflow。看起来很靠谱，没想到，结果也很靠谱！</p>
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>分析原因为使用源码安装FreeTDS时，其产生的文件也在自己指定的文件夹中，这就导致程序不一定能找到它。从而导致 ImportError！症结所在找到了，解决自然就比较流畅了，最方便的方法，创建软连接，使用<code>sudo find /  -name libsybdb.so.5</code>找到我的<strong>libsybdb.so.5</strong>文件坐在位置比如，我的文件在<code>/home/pcw/Downloads/freetds-0.91/src/dblib/.libs/libsybdb.so.5</code>使用命令创建软链接 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /home/pcw/Downloads/freetds-0.91/src/dblib/.libs/libsybdb.so.5 /usr/lib/libsybdb.so.5</span><br></pre></td></tr></table></figure>
 <p>当然，你需要把路径换成你自己的！</p>
+<p><a href="https://github.com/pymssql/pymssql/issues/8" target="_blank">参考链接 github</a></p>
 
       
     </div><!-- .entry-content -->
@@ -136,7 +187,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac终端切换用户/" data-id="cjuxfj2pm0005lpk3dib7u1pk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac终端切换用户/" data-id="cjuxfw16y0004pak3kjo88mq8" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -184,7 +235,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac设置环境变量PATH/" data-id="cjuxfj2pg0002lpk3a3jjs6dj" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/mac设置环境变量PATH/" data-id="cjuxfw1720009pak3jisqq8xx" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -260,7 +311,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/python使用schedule定时任务/" data-id="cjuxfj2q7000llpk39h9vbwsm" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/03/python使用schedule定时任务/" data-id="cjuxfw17i000kpak3tfdyr4mi" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -311,7 +362,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Python实现RPC微型服务器/" data-id="cjuxfj2pn0006lpk3bz59ogku" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Python实现RPC微型服务器/" data-id="cjuxfw16z0005pak3zfffharq" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -385,7 +436,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Markdown语法/" data-id="cjuxfj2ph0003lpk34rlm7pur" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/Markdown语法/" data-id="cjuxfw16s0001pak3tl9sbim9" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -487,7 +538,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/screen的相关用法笔记/" data-id="cjuxfj2q1000hlpk3stig2hqp" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/02/screen的相关用法笔记/" data-id="cjuxfw17n000npak3k0nv782e" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -544,7 +595,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/使用github创建自己的博客/" data-id="cjuxfj2q5000klpk32jlnuga1" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/使用github创建自己的博客/" data-id="cjuxfw17l000lpak361db7fps" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -633,7 +684,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/mysql8-0-12重置root密码方法/" data-id="cjuxfj2po0007lpk3pl78j7hz" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/01/mysql8-0-12重置root密码方法/" data-id="cjuxfw17e000hpak3rbholpu1" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -671,85 +722,6 @@
 
 
   
-    <article id="post-python使用happybase操作Hbase及Hbase在linux系统下的安装" class="post-python使用happybase操作Hbase及Hbase在linux系统下的安装 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/02/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/">python使用happybase操作Hbase及Hbase在linux系统下的安装</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/02/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/" data-id="cjuxfj2q2000ilpk3c0zcm1f1" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="安装Hbase"><a href="#安装Hbase" class="headerlink" title="安装Hbase"></a>安装Hbase</h1><p>安装请前往Hbase<a href="http://mirrors.hust.edu.cn/apache/hbase/" target="_blank" rel="noopener">官方网站</a>，下载版本根据需求自行选择。bin和src文件都需要下载并解压</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf hbase-x.x.x-bin.tar.gz</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<h1 id="部署jdk并设置java环境"><a href="#部署jdk并设置java环境" class="headerlink" title="部署jdk并设置java环境"></a>部署jdk并设置java环境</h1><p>自行下载jdk并解压到、usr/java中</p>
-<p>root用户下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi .bash_profile</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p>写入以下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p>执行该文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p>使用命令java -version检查是否安装成功</p>
-<h1 id="启动和停止HBase"><a href="#启动和停止HBase" class="headerlink" title="启动和停止HBase"></a>启动和停止HBase</h1><p>hbase-x.x.x/bin目录下，sh start-hbase.sh”或“./start-hbase.sh”命令启动HBase</p>
-<p>出现了以下内容表示启动成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">starting master, logging to /root/zhouzx/hbase-1.0.1/bin/../logs/hbase-root-master-A10168992.out</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p>sh stop-hbase.sh”或“./stop-hbase.sh”命令停止HBase</p>
-<h1 id="安装thrift"><a href="#安装thrift" class="headerlink" title="安装thrift"></a>安装thrift</h1><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install automake bison flex g++ git libboost1.55 libevent-dev libssl-dev libtool make pkg-config</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p><a href="https://thrift.apache.org/download" target="_blank" rel="noopener">下载thrift</a></p>
-<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf thrift-0.11.0.tar.gz</span><br><span class="line">cd thrift-0.11.0/</span><br><span class="line">./configure --with-cpp --with-boost --with-python --without-csharp --with-java --without-erlang --without-perl --with-php --without-php_extension --without-ruby --without-haskell  --without-go</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hbase-daemon.sh start thrift</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<h2 id="使用jps命令检查服务是否都已启动"><a href="#使用jps命令检查服务是否都已启动" class="headerlink" title="使用jps命令检查服务是否都已启动"></a>使用jps命令检查服务是否都已启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:~/Hbase/hbase-1.4.2# jps</span><br><span class="line">7393 Jps</span><br><span class="line">4549 ThriftServer</span><br><span class="line">7190 HMaster</span><br><span class="line">2575 Main</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<h1 id="安装happybase"><a href="#安装happybase" class="headerlink" title="安装happybase"></a>安装happybase</h1><p>所在虚拟环境中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install happybase</span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p>具体其他用法请参考<a href="https://happybase.readthedocs.io/en/latest/" target="_blank" rel="noopener">happybase文档</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> happybase</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">必须先启动hbase，hbse目录bin/start-hbase.sh</span></span><br><span class="line"><span class="string">要先在hbase某个节点上开启thrift服务</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># hbase thrift -p 9090 start</span></span><br><span class="line">connection = happybase.Connection(<span class="string">'localhost'</span>, autoconnect=<span class="literal">False</span>)</span><br><span class="line">connection.open()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># families = &#123;</span></span><br><span class="line"><span class="comment">#     'cf1': dict(max_versions=10),</span></span><br><span class="line"><span class="comment">#     'cf2': dict(max_versions=1, block_cache_enabled=False),</span></span><br><span class="line"><span class="comment">#     'cf3': dict(),  # use defaults</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"><span class="comment"># connection.create_table('mytable', families)</span></span><br><span class="line"><span class="comment"># connection.create_table('datatest1', )</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print所有的表名</span></span><br><span class="line">print(<span class="string">'All tables: '</span>, connection.tables(), <span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作testtable表</span></span><br><span class="line"><span class="comment"># 这个操作是一个提前声明-我要用到这个表了-但不会提交给thrift server做操作</span></span><br><span class="line">table = connection.table(<span class="string">'mytable'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># table.put('row1', &#123;'cf1:content': 'pe', 'cf1:price': '23'&#125;)</span></span><br><span class="line"><span class="comment"># table.put('row2', &#123;'cf1:content': 'pe2', 'cf1:price': '232'&#125;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检索某一行</span></span><br><span class="line">row = table.row(<span class="string">b'row1'</span>)</span><br><span class="line">print(<span class="string">'a row:'</span>, row, <span class="string">'\n'</span>)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># right</span></span><br><span class="line">print(row[<span class="string">b'cf1:content'</span>])</span><br><span class="line">print(row[<span class="string">b'cf1:price'</span>])</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># # wrong,这个是错误的，必须加b</span></span><br><span class="line"><span class="comment"># print(row['cf1:content'])</span></span><br><span class="line"><span class="comment"># print(row['cf1:price'])</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 显示所有列族</span></span><br><span class="line">print(<span class="string">'所有列族'</span>, table.families(), <span class="string">'\n'</span>)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 输出两列</span></span><br><span class="line">print(<span class="string">'print two rows:'</span>)</span><br><span class="line">rows = table.rows([<span class="string">b'row1'</span>, <span class="string">b'row2'</span>])</span><br><span class="line"><span class="keyword">for</span> key, data <span class="keyword">in</span> rows:</span><br><span class="line">    print(key, data)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 字典输出两列</span></span><br><span class="line">print(<span class="string">'\n'</span>, <span class="string">'print two dict rows'</span>)</span><br><span class="line">rows_as_dict = dict(table.rows([<span class="string">b'row1'</span>, <span class="string">b'row2'</span>]))</span><br><span class="line">print(rows_as_dict)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 输入row的一个列族所有值</span></span><br><span class="line">row = table.row(<span class="string">b'row2'</span>, columns=[<span class="string">b'cf1'</span>])</span><br><span class="line">print(<span class="string">'\n'</span>, <span class="string">'输出一个列族'</span>, row)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># scan操作</span></span><br><span class="line">print(<span class="string">'\n'</span>, <span class="string">'do scan'</span>)</span><br><span class="line"><span class="keyword">for</span> key, data <span class="keyword">in</span> table.scan():</span><br><span class="line">    print(key, data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">All tables:  [b'mytable']</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">a row: &#123;b'cf2:price': b'23', b'cf1:content': b'pe', b'cf1:price': b'23'&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">b'pe'</span></span><br><span class="line"><span class="string">b'23'</span></span><br><span class="line"><span class="string">所有列族 &#123;b'cf3': &#123;'block_cache_enabled': False, 'max_versions': 3, 'name': b'cf3:', 'time_to_live': 2147483647, 'bloom_filter_type': b'NONE', 'in_memory': False, 'compression': b'NONE', 'bloom_filter_vector_size': 0, 'bloom_filter_nb_hashes': 0&#125;, b'cf1': &#123;'block_cache_enabled': False, 'max_versions': 10, 'name': b'cf1:', 'time_to_live': 2147483647, 'bloom_filter_type': b'NONE', 'in_memory': False, 'compression': b'NONE', 'bloom_filter_vector_size': 0, 'bloom_filter_nb_hashes': 0&#125;, b'cf2': &#123;'block_cache_enabled': False, 'max_versions': 1, 'name': b'cf2:', 'time_to_live': 2147483647, 'bloom_filter_type': b'NONE', 'in_memory': False, 'compression': b'NONE', 'bloom_filter_vector_size': 0, 'bloom_filter_nb_hashes': 0&#125;&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">print two rows:</span></span><br><span class="line"><span class="string">b'row1' &#123;b'cf2:price': b'23', b'cf1:content': b'pe', b'cf1:price': b'23'&#125;</span></span><br><span class="line"><span class="string">b'row2' &#123;b'cf1:content': b'pe2', b'cf1:price': b'232'&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> print two dict rows</span></span><br><span class="line"><span class="string">&#123;b'row1': &#123;b'cf2:price': b'23', b'cf1:content': b'pe', b'cf1:price': b'23'&#125;, b'row2': &#123;b'cf1:content': b'pe2', b'cf1:price': b'232'&#125;&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 输出一个列族 &#123;b'cf1:content': b'pe2', b'cf1:price': b'232'&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> do scan</span></span><br><span class="line"><span class="string">b'row1' &#123;b'cf2:price': b'23', b'cf1:content': b'pe', b'cf1:price': b'23'&#125;</span></span><br><span class="line"><span class="string">b'row2' &#123;b'cf1:content': b'pe2', b'cf1:price': b'232'&#125;</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/02/01/python使用happybase操作Hbase及Hbase在linux系统下的安装/">
-    <time datetime="2019-02-01T07:26:35.000Z" class="entry-date">
-        2019-02-01
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hbase/">hbase</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
   
     <nav id="pagination">
       <nav id="page-nav">
@@ -772,6 +744,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/26/SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function/">SyntaxError: unqualified exec is not allowed in function &#39;xxx&#39; it is a nested function</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/26/ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory/">ImportError: libsybdb.so.5: cannot open shared object file: No such file or directory</a>
           </li>
         
@@ -787,10 +763,6 @@
             <a href="/2019/04/03/python使用schedule定时任务/">python使用schedule定时任务</a>
           </li>
         
-          <li>
-            <a href="/2019/04/02/Python实现RPC微型服务器/">Python实现RPC微型服务器</a>
-          </li>
-        
       </ul>
     </div>
   </aside>
@@ -800,7 +772,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -809,7 +781,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+      <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
     </div>
   </aside>
 

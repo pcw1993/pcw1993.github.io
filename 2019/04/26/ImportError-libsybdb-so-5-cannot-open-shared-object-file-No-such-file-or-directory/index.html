@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="楚伟的博客">
 <meta property="og:description" content="遇到的问题ImportError: libsybdb.so.5今天安装pymssql，众所周知，这个库依赖FreeTDS，所以我通过下载源码的方式安装了它，但问题也出现了，运行后报了以下错误 12ImportError: libsybdb.so.5: cannot open shared object file: No such file or  directory 这让我很苦恼，本来对linux">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-26T02:00:34.886Z">
+<meta property="og:updated_time" content="2019-04-26T02:05:53.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ImportError: libsybdb.so.5: cannot open shared object file: No such file or directory">
 <meta name="twitter:description" content="遇到的问题ImportError: libsybdb.so.5今天安装pymssql，众所周知，这个库依赖FreeTDS，所以我通过下载源码的方式安装了它，但问题也出现了，运行后报了以下错误 12ImportError: libsybdb.so.5: cannot open shared object file: No such file or  directory 这让我很苦恼，本来对linux">
@@ -87,18 +87,19 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/26/ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory/" data-id="cjuxfj2p90000lpk3tmrve5cz" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
+            <a href="javascript:void(0);" data-url="http://pcw1993.github.io/2019/04/26/ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory/" data-id="cjuxfw16m0000pak3rizuxrq0" class="leave-reply bdsharebuttonbox" data-cmd="more">分享-Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><h5 id="ImportError-libsybdb-so-5"><a href="#ImportError-libsybdb-so-5" class="headerlink" title="ImportError: libsybdb.so.5"></a>ImportError: libsybdb.so.5</h5><p>今天安装pymssql，众所周知，这个库依赖FreeTDS，所以我通过下载源码的方式安装了它，但问题也出现了，运行后报了以下错误</p>
+        <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><h5 id="ImportError-libsybdb-so-5"><a href="#ImportError-libsybdb-so-5" class="headerlink" title="ImportError: libsybdb.so.5"></a>ImportError: libsybdb.so.5</h5><p>今天安装pymssql，众所周知，这个库依赖FreeTDS，所以我通过下载源码的方式安装了它，但问题也出现了，运行后报了以下错误</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ImportError: libsybdb.so.5: cannot open shared object file: No such file or</span><br><span class="line">  directory</span><br></pre></td></tr></table></figure>
 <p>这让我很苦恼，本来对linux系统就不是特别熟悉，多方查阅资料，搜索技术博客。很多人写的都不能解决我的问题。直到后来，这里不得不说说搜索引擎的影响了。同样的搜索条件，百度给的大多是百度知道，新浪博客和一些不知道什么奇奇怪怪的一大堆广告的类似于CSDN这种博客或者学习网站的结果，这很影响心情！！！还是用了谷歌，令人欣慰，结果大都来自知名的github，或者Stack Overflow。看起来很靠谱，没想到，结果也很靠谱！</p>
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>分析原因为使用源码安装FreeTDS时，其产生的文件也在自己指定的文件夹中，这就导致程序不一定能找到它。从而导致 ImportError！症结所在找到了，解决自然就比较流畅了，最方便的方法，创建软连接，使用<code>sudo find /  -name libsybdb.so.5</code>找到我的<strong>libsybdb.so.5</strong>文件坐在位置比如，我的文件在<code>/home/pcw/Downloads/freetds-0.91/src/dblib/.libs/libsybdb.so.5</code>使用命令创建软链接 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /home/pcw/Downloads/freetds-0.91/src/dblib/.libs/libsybdb.so.5 /usr/lib/libsybdb.so.5</span><br></pre></td></tr></table></figure>
 <p>当然，你需要把路径换成你自己的！</p>
+<p><a href="https://github.com/pymssql/pymssql/issues/8" target="_blank">参考链接 github</a></p>
 
       
     </div><!-- .entry-content -->
@@ -118,6 +119,8 @@
     
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/04/26/SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function/" rel="prev"><span class="meta-nav">←</span> SyntaxError: unqualified exec is not allowed in function &#39;xxx&#39; it is a nested function</a></span>
     
     
         <span class="nav-next"><a href="/2019/04/03/mac终端切换用户/" rel="next">mac终端切换用户 <span class="meta-nav">→</span></a></span>
@@ -144,6 +147,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/26/SyntaxError-unqualified-exec-is-not-allowed-in-function-xxx-it-is-a-nested-function/">SyntaxError: unqualified exec is not allowed in function &#39;xxx&#39; it is a nested function</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/26/ImportError-libsybdb-so-5-cannot-open-shared-object-file-No-such-file-or-directory/">ImportError: libsybdb.so.5: cannot open shared object file: No such file or directory</a>
           </li>
         
@@ -159,10 +166,6 @@
             <a href="/2019/04/03/python使用schedule定时任务/">python使用schedule定时任务</a>
           </li>
         
-          <li>
-            <a href="/2019/04/02/Python实现RPC微型服务器/">Python实现RPC微型服务器</a>
-          </li>
-        
       </ul>
     </div>
   </aside>
@@ -172,7 +175,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hbase/">hbase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -181,7 +184,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+      <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/hbase/" style="font-size: 10px;">hbase</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
     </div>
   </aside>
 
